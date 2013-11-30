@@ -21,9 +21,9 @@ function cjkSpaceFix() {
         '[\uFF00-\uFFEF]', // InHalfwidth_and_Fullwidth_Forms
     ].join('|')
 
-    var regex = new RegExp('('+cjkRegex+')\n('+cjkRegex+')', 'g');
+    var regex = new RegExp('('+cjkRegex+')\n(?='+cjkRegex+')', 'g');
     var ps = document.getElementsByTagName('p');
     for (var i=0; i<ps.length; i++) {
-        ps[i].innerHTML = ps[i].innerHTML.replace(regex, '$1$2');
+        ps[i].innerHTML = ps[i].innerHTML.replace(regex, '$1');
     }
 }
