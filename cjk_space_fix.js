@@ -1,4 +1,5 @@
 function cjkSpaceFix() {
+    "use strict";
     var cjkRegex = [
         '[\u3000-\u303F]', // InCJK_Symbols_and_Punctuation
         '[\u3040-\u309F]', // InHiragana
