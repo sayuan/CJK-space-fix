@@ -19,7 +19,7 @@ function cjkSpaceFix() {
         '[\uF900-\uFAFF]', // InCJK_Compatibility_Ideographs
         '[\uFE30-\uFE4F]', // InCJK_Compatibility_Forms
         '[\uFF00-\uFFEF]', // InHalfwidth_and_Fullwidth_Forms
-    ].join('|')
+    ].join('|');
 
     var regex = new RegExp('('+cjkRegex+')\n(?='+cjkRegex+')', 'g');
     var ps = document.getElementsByTagName('p');
