@@ -23,8 +23,14 @@ function cjkSpaceFix() {
     ].join('|');
 
     var regex = new RegExp('('+cjkRegex+')\n(?='+cjkRegex+')', 'g');
-    var ps = document.getElementsByTagName('p');
-    for (var i=0; i<ps.length; i++) {
-        ps[i].innerHTML = ps[i].innerHTML.replace(regex, '$1');
+
+    function removeSpaces(tag) {
+        var elmts = document.getElementsByTagName(tag);
+        for (var i=0; i<elmts.length; i++) {
+            elmts[i].innerHTML = elmts[i].innerHTML.replace(regex, '$1');
+        }
     }
+
+    removeSpaces('p');
+    removeSpaces('li');
 }
