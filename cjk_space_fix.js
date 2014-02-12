@@ -22,7 +22,7 @@ function cjkSpaceFix() {
         '[\uFF00-\uFFEF]', // InHalfwidth_and_Fullwidth_Forms
     ].join('|');
 
-    var regex = new RegExp('('+cjkRegex+')\n(?='+cjkRegex+')', 'g');
+    var regex = new RegExp('('+cjkRegex+')\\s+(?='+cjkRegex+')', 'g');
 
     function removeSpaces(tag) {
         var elmts = document.getElementsByTagName(tag);
